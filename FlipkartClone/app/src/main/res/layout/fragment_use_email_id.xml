@@ -1,60 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Fragments.UsePhoneNumber">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+    tools:context=".Fragments.UseEmailId">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:elevation="@dimen/dp_10"
-        android:background="@color/login_fb"
-        android:padding="@dimen/dp_10">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/Flipkart"
-            android:gravity="center"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="@dimen/sp_20"/>
-
-    </LinearLayout>
-    <TextView
-        android:id="@+id/tvLogintogetstart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_30"
-        android:text="@string/Logintogetstarted"
-        android:textColor="@color/black"
-        android:textSize="@dimen/sp_20"
-        android:textStyle="bold"
-        android:layout_marginLeft="@dimen/dp_20"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:text="@string/ExperiencetheallnewFlipkart"
-        android:textSize="@dimen/sp_15"
-        android:textStyle="bold"
-        android:layout_marginLeft="@dimen/dp_20"/>
-
+        android:id="@+id/llEmail">
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        app:boxStrokeColor="@color/blue"
+        app:hintTextColor="@color/blue"
+        android:hint="Email-id"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/otlEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Emai ID" />
+            />
+
     </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/usePhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Phone Number"
+        android:textSize="@dimen/sp_15"
+        android:layout_gravity="end"
+        android:textStyle="bold"
+        android:background="@color/white"
+        android:textColor="@color/blue"
+        android:layout_marginRight="@dimen/dp_20"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="@dimen/dp_10">
+
+        <Button
+            android:id="@+id/btnContinueWithEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:padding="@dimen/dp_20"
+            android:background="@color/yellow_bumble"
+            android:textColor="@color/white"
+            android:text="@string/Continue"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.nero.flipkart.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,23 +18,21 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.nero.flipkart.Interface.LoginIterface;
 import com.nero.flipkart.R;
 
-public class UsePhoneNumber extends Fragment {
+public class UseEmailId extends Fragment {
 
-    private TextInputEditText tvPhone;
-    private Button btnUseEmail, btnContinue;
+    private TextInputEditText tvEmail;
+    private Button btnUsePhone, btnContinue;
     private LoginIterface loginIterface;
 
-    public UsePhoneNumber() {
+    public UseEmailId() {
         // Required empty public constructor
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_use_phone_number, container, false);
+        return inflater.inflate(R.layout.fragment_use_email_id, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -43,10 +40,10 @@ public class UsePhoneNumber extends Fragment {
     }
 
     private void initViews(View view) {
-        tvPhone = view.findViewById(R.id.otlPhone);
-        btnUseEmail = view.findViewById(R.id.useEmailId);
-        btnContinue = view.findViewById(R.id.btnContinue);
-        btnUseEmail.setOnClickListener(new View.OnClickListener() {
+        tvEmail = view.findViewById(R.id.otlEmail);
+        btnUsePhone = view.findViewById(R.id.usePhoneNumber);
+        btnContinue = view.findViewById(R.id.btnContinueWithEmail);
+        btnUsePhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginIterface.onDataRecived();
@@ -55,12 +52,10 @@ public class UsePhoneNumber extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d("madhuri", "onClick: "+ tvPhone.getEditText().getText().toString());
-
-                Log.d("madhuri", "onClick: "+ tvPhone.getText().toString());
+                Log.d("madhuri", "onClick: "+ tvEmail.getText().toString());
                 Bundle bundle = new Bundle();
-                bundle.putString("phone", tvPhone.getText().toString());
-                loginIterface.continueWithPhone(bundle);
+                bundle.putString("email", tvEmail.getText().toString());
+                loginIterface.continueWithEmail(bundle);
             }
         });
     }

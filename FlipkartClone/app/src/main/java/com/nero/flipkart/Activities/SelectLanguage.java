@@ -5,10 +5,12 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 
 import com.nero.flipkart.Adapters.LanguageAdapter;
 import com.nero.flipkart.Model.LanguageModel;
@@ -22,6 +24,7 @@ public class SelectLanguage extends AppCompatActivity implements AdapterView.OnI
     private RecyclerView recyclerView;
     private LanguageAdapter languageAdapter;
     private List<LanguageModel> languageModelList;
+    private Button btnContinue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +36,19 @@ public class SelectLanguage extends AppCompatActivity implements AdapterView.OnI
 
     private void init() {
         recyclerView = findViewById(R.id.rvLanguage);
+        btnContinue = findViewById(R.id.btnContinue);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         languageAdapter = new LanguageAdapter(languageModelList, this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(languageAdapter);
         languageAdapter.setOnItemClickListener(this);
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SelectLanguage.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void buildInput() {
