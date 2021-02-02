@@ -1,8 +1,10 @@
-package com.nero.flipkart;
+package com.nero.flipkart.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.nero.flipkart.R;
 
 public class MainActivity extends AppCompatActivity {
 
