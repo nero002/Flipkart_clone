@@ -57,11 +57,21 @@ public class UsePhoneNumber extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("madhuri", "onClick: "+ tvPhone.getText().toString());
-                Bundle bundle = new Bundle();
-                bundle.putString("phone", tvPhone.getText().toString());
-                loginIterface.continueWithPhone(bundle);
+                if (loginIterface != null && isPhoneValid()) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("phone", tvPhone.getText().toString());
+                    loginIterface.continueWithPhoneEmail(bundle);
+                }
             }
         });
+    }
+
+    private boolean isPhoneValid(){
+        if(tvPhone.getText().toString().length() != 10 && tvPhone.getText().toString().length() != 13){
+            tvPhone.setError("Invalid phone number");
+            return false;
+        }
+        return true;
     }
 
     public void setListener(LoginIterface listener){

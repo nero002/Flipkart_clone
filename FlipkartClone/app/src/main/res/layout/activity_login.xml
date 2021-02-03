@@ -29,25 +29,6 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvLogintogetstart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_30"
-        android:text="@string/Logintogetstarted"
-        android:textColor="@color/black"
-        android:textSize="@dimen/sp_20"
-        android:textStyle="bold"
-        android:layout_marginLeft="@dimen/dp_20"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_10"
-        android:text="@string/ExperiencetheallnewFlipkart"
-        android:textSize="@dimen/sp_15"
-        android:layout_marginLeft="@dimen/dp_20"/>
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

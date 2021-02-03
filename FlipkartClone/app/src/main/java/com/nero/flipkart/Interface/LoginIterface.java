@@ -7,5 +7,7 @@ public interface LoginIterface {
 
     void continueWithEmail(Bundle bundle);
 
-    void continueWithPhone(Bundle bundle);
+    void continueWithPhoneEmail(Bundle bundle);
+
+    void backToLoginPage(Bundle bundle);
 }

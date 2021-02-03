@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.nero.flipkart.Fragments.LoginWithOTP;
 import com.nero.flipkart.Fragments.UseEmailId;
 import com.nero.flipkart.Fragments.UsePhoneNumber;
 import com.nero.flipkart.Interface.LoginIterface;
@@ -54,11 +55,30 @@ public class LoginActivity extends AppCompatActivity implements LoginIterface {
 
     @Override
     public void continueWithEmail(Bundle bundle) {
-
     }
 
     @Override
-    public void continueWithPhone(Bundle bundle) {
-
+    public void continueWithPhoneEmail(Bundle bundle) {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        LoginWithOTP loginWithOTP = new LoginWithOTP();
+        loginWithOTP.setArguments(bundle);
+        loginWithOTP.setListener(this);
+        fragmentTransaction.replace(R.id.flConatiner,loginWithOTP,"loginWithOTP").commit();
     }
+
+    @Override
+    public void backToLoginPage(Bundle bundle) {
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        if(bundle.getString("loginPageType") == "email"){
+            UseEmailId useEmailId = new UseEmailId();
+            useEmailId.setListener(this);
+            fragmentTransaction.add(R.id.flConatiner,useEmailId,"useEmailId").commit();
+        }
+        else if(bundle.getString("loginPageType") == "phone"){
+            UsePhoneNumber usePhoneNumber = new UsePhoneNumber();
+            usePhoneNumber.setListener(this);
+            fragmentTransaction.replace(R.id.flConatiner,usePhoneNumber,"usePhone").commit();
+        }
+    }
+
 }

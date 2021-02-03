@@ -56,11 +56,21 @@ public class UseEmailId extends Fragment {
             @Override
             public void onClick(View v) {
                 Log.d("madhuri", "onClick: "+ tvEmail.getText().toString());
-                Bundle bundle = new Bundle();
-                bundle.putString("email", tvEmail.getText().toString());
-                loginIterface.continueWithEmail(bundle);
+                if (loginIterface != null && isEmailValid()) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("email", tvEmail.getText().toString());
+                    loginIterface.continueWithPhoneEmail(bundle);
+                }
             }
         });
+    }
+
+    private boolean isEmailValid(){
+        if(!tvEmail.getText().toString().contains("@gmail.com")){
+            tvEmail.setError("Invalid Email");
+            return false;
+        }
+        return true;
     }
 
     public void setListener(LoginIterface listener){
