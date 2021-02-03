@@ -1,4 +1,4 @@
-package com.nero.flipkart.Activities;
+package com.nero.flipkart;
 
 import androidx.appcompat.app.AppCompatActivity;
 
