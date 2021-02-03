@@ -25,16 +25,17 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:id="@+id/otlPhone"
+                android:inputType="number"
                 android:layout_height="wrap_content"
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <TextView
             android:id="@+id/useEmailId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Use Phone Number"
+            android:text="Use Email-id"
             android:textSize="@dimen/sp_15"
             android:layout_gravity="end"
             android:textStyle="bold"
@@ -63,7 +64,7 @@
             android:padding="@dimen/dp_20"
             android:background="@color/yellow_bumble"
             android:textColor="@color/white"
-            android:text="@string/Continue"
+            android:text="@string/sendOTP"
             android:textSize="@dimen/sp_20"
             android:textStyle="bold" />
     </LinearLayout>

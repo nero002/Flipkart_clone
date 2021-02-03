@@ -22,7 +22,8 @@ import com.nero.flipkart.R;
 public class UsePhoneNumber extends Fragment {
 
     private TextInputEditText tvPhone;
-    private Button btnUseEmail, btnContinue;
+    private Button  btnContinue;
+    private TextView btnUseEmail;
     private LoginIterface loginIterface;
 
     public UsePhoneNumber() {
@@ -55,8 +56,6 @@ public class UsePhoneNumber extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d("madhuri", "onClick: "+ tvPhone.getEditText().getText().toString());
-
                 Log.d("madhuri", "onClick: "+ tvPhone.getText().toString());
                 Bundle bundle = new Bundle();
                 bundle.putString("phone", tvPhone.getText().toString());
