@@ -1,5 +1,6 @@
 package com.nero.flipkart.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,15 +11,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.nero.flipkart.Interface.LoginIterface;
+import com.nero.flipkart.Activities.OfferZone;
 import com.nero.flipkart.R;
 
 public class LoginWithOTP extends Fragment {
 
     private TextView edit, signup;
     private LoginIterface loginIterface;
+    private Button verify;
     private String loginType;
 
     public LoginWithOTP() {
@@ -55,6 +59,7 @@ public class LoginWithOTP extends Fragment {
     private void initViews(View view) {
         edit = view.findViewById(R.id.tvEdit);
         signup = view.findViewById(R.id.tvSignup);
+        verify = view.findViewById(R.id.btnContinueWithOtp);
         getDataFromBundle();
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +67,13 @@ public class LoginWithOTP extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("loginPageType", loginType);
                 loginIterface.backToLoginPage(bundle);
+            }
+        });
+        verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), OfferZone.class);
+                startActivity(intent);
             }
         });
     }
