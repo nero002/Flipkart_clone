@@ -14,22 +14,24 @@
         <activity
             android:name=".HomeScreenNavActivity"
             android:label="@string/title_activity_home_screen_nav"
-            android:theme="@style/Theme.Flipkart.NoActionBar" />
+            android:theme="@style/Theme.Flipkart.NoActionBar">
+
+        </activity>
+
 
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".ProductDetails" />
-        <activity android:name=".OfferZone" />
+        <activity android:name=".OfferZone" > <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".SelectLanguage">
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+    <activity android:name=".SelectLanguage" />
 
-        </activity>
-    </application>
 
-</manifest>
+</application>
+
+    </manifest>

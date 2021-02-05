@@ -91,14 +91,11 @@ public class HomeFragment extends Fragment {
             @Override
             public void run() {
                 HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(responseModel.getMobilesProducts().get(0).getMobiles());
-                Context context;
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
                 rrHorizontalStaticView.setLayoutManager(linearLayoutManager);
                 rrHorizontalStaticView.setAdapter(homeHorizontalStatic3ViewHolder);
             }
         });
-
-
     }
 
     private void setRecyclerViewFor4GridView() {

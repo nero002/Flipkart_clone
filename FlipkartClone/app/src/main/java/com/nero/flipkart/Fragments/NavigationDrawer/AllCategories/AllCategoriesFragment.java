@@ -21,16 +21,9 @@ public class AllCategoriesFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(AllCategoriesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_all_categories, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+
+        return inflater.inflate(R.layout.fragment_all_categories, container, false);
+
+
     }
 }
