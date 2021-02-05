@@ -79,9 +79,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_20"
                 android:layout_marginRight="@dimen/dp_10"
                 android:background="@color/Flipkart_Blue"
-                android:layout_marginTop="@dimen/dp_20"
                 android:text="@string/viewAll"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
@@ -94,14 +94,33 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/grid4images"
-                    android:layout_margin="@dimen/dp_10"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_10" />
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
+        <!--//Phone  banner//-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewphone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:elevation="@dimen/dp_10">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:src="@drawable/phonebanner" />
+        </androidx.cardview.widget.CardView>
 
+        <GridView
+            android:id="@+id/gridViewCards"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnWidth="@dimen/dp_200"
+            android:numColumns="2"
+            android:verticalSpacing="@dimen/dp_6" />
     </LinearLayout>
 
 

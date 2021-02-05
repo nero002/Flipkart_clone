@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="20dp"
+    android:gravity="center"
+    android:orientation="vertical">
 
 
     <ImageView
         android:id="@+id/grid1"
-        android:layout_width="@dimen/dp_200"
-        android:layout_height="@dimen/dp_200"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_140"
         android:padding="@dimen/dp_20"
-        android:src="@drawable/healthsupliments" />
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tvproductName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/sp_18" />
+
+    <TextView
+        android:id="@+id/tv4Offer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/green"
+        android:textSize="@dimen/sp_12" />
 
 </LinearLayout>
 
