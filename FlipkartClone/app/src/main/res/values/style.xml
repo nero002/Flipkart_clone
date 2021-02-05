@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="cardViewInHomeHorizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_5</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">@dimen/dp_2</item>
+    </style>
+
+    <style name="relativeLayoutInHomeHorizontalScroll">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dp_7</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="textViewsInHomeFragments">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:drawablePadding">@dimen/dp_5</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+    </style>
+
+    <style name="imageViewHorizontal3rdPositionInHome">
+        <item name="android:layout_width">@dimen/dp_150</item>
+        <item name="android:layout_height">@dimen/dp_120</item>
+        <item name="android:layout_margin">@dimen/dp_5</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+
+</resources>

@@ -20,7 +20,7 @@ import com.nero.flipkart.Interface.ApiCallInterface;
 import com.nero.flipkart.Interface.OnProductItemClickListener;
 import com.nero.flipkart.Model.ProductModel;
 import com.nero.flipkart.Networks.ProductNetwork;
-import com.nero.flipkart.Activities.ProductDetails;
+import com.nero.flipkart.ProductDetails;
 import com.nero.flipkart.R;
 
 import java.util.ArrayList;

@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.nero.flipkart.Interface.LoginIterface;
-import com.nero.flipkart.Activities.OfferZone;
+import com.nero.flipkart.OfferZone;
 import com.nero.flipkart.R;
 
 public class LoginWithOTP extends Fragment {
