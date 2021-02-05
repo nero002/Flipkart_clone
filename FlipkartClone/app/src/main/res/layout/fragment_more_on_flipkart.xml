@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".NavigationDrawer.MoreOnFlipkart.MoreOnFlipkartFragment">
+    tools:context=".Fragments.NavigationDrawer.MoreOnFlipkart.MoreOnFlipkartFragment">
 
 
     <LinearLayout
@@ -266,19 +266,19 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/creadit"
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout_3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout_2"
-        android:layout_margin="@dimen/dp_15"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="@dimen/dp_30"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/credit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_15"
+            android:id="@+id/credits"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_25"
             app:cardCornerRadius="@dimen/dp_10">
 
             <LinearLayout
@@ -299,15 +299,25 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dp_10"
-                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_5"
                     android:text="@string/credits"
                     android:textColor="@color/black"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
+
     </LinearLayout>
+
+
 </RelativeLayout>

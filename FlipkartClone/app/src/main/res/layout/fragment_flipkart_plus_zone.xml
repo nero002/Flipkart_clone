@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Flipkart_Blue_dark"
     android:orientation="vertical"
-    tools:context=".NavigationDrawer.FlipkartPlusZone.FlipkartPlusZoneFragment">
+    tools:context=".Fragments.NavigationDrawer.FlipkartPlusZone.FlipkartPlusZoneFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

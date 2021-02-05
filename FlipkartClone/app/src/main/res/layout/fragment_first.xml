@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.FirstFragment">
+    tools:context=".Fragments.Home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/Flipkart_Blue"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_10">
+
+            <androidx.cardview.widget.CardView style="@style/cardViewInHomeHorizontal">
+
+                <RelativeLayout style="@style/relativeLayoutInHomeHorizontalScroll">
+
+                    <EditText
+                        android:id="@+id/tvSearchCity"
+                        style="@style/textViewsInHomeFragments"
+                        android:layout_alignParentStart="true"
+                        android:drawableStart="@drawable/ic_baseline_search_24"
+                        android:drawableEnd="@drawable/ic_baseline_mic_24"
+                        android:hint="Search for Products,Brands and More"
+                        android:textSize="@dimen/dp_12" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rrAllCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_180"
+            android:layout_marginTop="@dimen/dp_5"
+            app:iss_auto_cycle="true"
+            app:iss_delay="0"
+            app:iss_error_image="@drawable/slider1"
+            app:iss_period="1000"
+            app:iss_selected_dot="@drawable/default_selected_dot"
+            app:iss_unselected_dot="@drawable/default_unselected_dot" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rrHorizontalStaticView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/rrTextTrending"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4FC4E3">
+
+            <TextView
+                android:id="@+id/tvtrending"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_gravity="center"
+                android:gravity="left|center"
+                android:text="@string/trending_offers"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_20" />
+
+            <Button
+                android:id="@+id/btnViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@color/Flipkart_Blue"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/viewAll"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvtrending"
+                android:elevation="@dimen/dp_10">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/grid4images"
+                    android:layout_margin="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

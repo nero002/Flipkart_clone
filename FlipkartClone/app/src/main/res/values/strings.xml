@@ -57,7 +57,6 @@
     <string name="more_on_flipkart">More on Flipkart</string>
     <string name="all_categories">All Categories</string>
     <string name="flipkart_plus_zone">Flipkart Plus Zone</string>
-    <string name="home">Home</string>
     <string name="title_activity_home_screen_nav">HomeScreenNav</string>
     <string name="notification">Notification</string>
     <string name="claim_exclusive_rewards_from_our_partners">Claim Exclusive Rewards From our Partners</string>
@@ -66,4 +65,8 @@
     <string name="credits">Credits</string>
     <string name="insurance">Insurance</string>
     <string name="idea">idea</string>
+    <string name="home">Home</string>
+    <string name="search_for_products_brands_and_more">Search for Products,Brands and More</string>
+    <string name="trending_offers">Trending Offers</string>
+    <string name="viewAll">View All</string>
 </resources>
