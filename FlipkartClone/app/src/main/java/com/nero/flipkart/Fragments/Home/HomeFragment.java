@@ -10,21 +10,30 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.slider.Slider;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeAllCategoriesViewHolderAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeGridView4ViewHolderAndAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeHorizontalStatic3ViewHolder;
+import com.nero.flipkart.Fragments.MobileFragment.MobileViewHolderAdapter;
+import com.nero.flipkart.POJO.MobileModel;
+import com.nero.flipkart.POJO.MobilesModel;
 import com.nero.flipkart.R;
 
+import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +53,12 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private Runnable fetchResponseRunnable = new Runnable() {
+        @Override
+        public void run() {
+            fetchResponseFromAssets();
+        }
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,36 +79,39 @@ public class HomeFragment extends Fragment {
         mRrAllCategories = view.findViewById(R.id.rrAllCategories);
         rrHorizontalStaticView = view.findViewById(R.id.rrHorizontalStaticView);
         mRrGrid4images = view.findViewById(R.id.grid4images);
+        startBackgroundThread();
         setRecyclerViewForAllCategoriesOne();
         slider();
-        setRecyclerViewFor3rdStaticHorizontal();
         setRecyclerViewFor4GridView();
+    }
+
+
+    private void setRecyclerViewFor3rdStaticHorizontal(MobileModel responseModel) {
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(responseModel.getMobilesProducts().get(0).getMobiles());
+                Context context;
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
+                rrHorizontalStaticView.setLayoutManager(linearLayoutManager);
+                rrHorizontalStaticView.setAdapter(homeHorizontalStatic3ViewHolder);
+            }
+        });
+
+
     }
 
     private void setRecyclerViewFor4GridView() {
         ArrayList<Integer> image = new ArrayList<>();
-        image.add(R.drawable.saree);
-        image.add(R.drawable.shoes);
-        image.add(R.drawable.menshoodies);
-        image.add(R.drawable.jwellery);
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(image);
-        mRrGrid4images.setLayoutManager(gridLayoutManager);
-        mRrGrid4images.setAdapter(homeHorizontalStatic3ViewHolder);
-    }
-
-    private void setRecyclerViewFor3rdStaticHorizontal() {
-        ArrayList<Integer> image = new ArrayList<>();
-        image.add(R.drawable.healthsupliments);
-        image.add(R.drawable.mobile_home);
-        image.add(R.drawable.smart_watch);
-
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
-        HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(image);
-        rrHorizontalStaticView.setLayoutManager(gridLayoutManager);
-        rrHorizontalStaticView.setAdapter(homeHorizontalStatic3ViewHolder);
-
+//        image.add(R.drawable.saree);
+//        image.add(R.drawable.shoes);
+//        image.add(R.drawable.menshoodies);
+//        image.add(R.drawable.jwellery);
+//
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+//        HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(image);
+//        mRrGrid4images.setLayoutManager(gridLayoutManager);
+//        mRrGrid4images.setAdapter(homeHorizontalStatic3ViewHolder);
     }
 
     private void setRecyclerViewForAllCategoriesOne() {
@@ -131,5 +149,36 @@ public class HomeFragment extends Fragment {
         slideModels.add(new SlideModel(R.drawable.slider7, ScaleTypes.CENTER_CROP));
 
         imageSlider.setImageList(slideModels, ScaleTypes.CENTER_CROP);
+    }
+
+    private void startBackgroundThread() {
+        Thread thread = new Thread(fetchResponseRunnable);
+        thread.start();
+    }
+
+    private void fetchResponseFromAssets() {
+        try {
+            InputStream inputStream = getActivity().getAssets().open("mobile.json");
+            int data = inputStream.read();
+            StringBuffer stringBuffer = new StringBuffer();
+            while (data != -1) {
+                char ch = (char) data;
+                stringBuffer.append(ch);
+                data = inputStream.read();
+            }
+            buildPOJOFromJSON(stringBuffer.toString());
+
+        } catch (Exception e) {
+            Log.d("Dheeraj", e.getMessage());
+        }
+    }
+
+    private void buildPOJOFromJSON(String json) {
+        Gson gson = new Gson();
+        Type type = new TypeToken<MobileModel>() {
+        }.getType();
+        MobileModel responseModel = gson.fromJson(json, type);
+        setRecyclerViewFor3rdStaticHorizontal(responseModel);
+
     }
 }
