@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e6e6e6"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.Payment_Details"
     tools:ignore="NotSibling">
@@ -27,14 +28,18 @@
            android:layout_marginTop="@dimen/dp_18"
            android:layout_marginStart="@dimen/dp_30"/>
    </LinearLayout>
-    <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="555dp"
+        android:layout_below="@id/lineat1">
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_75"
         android:layout_below="@id/lineat1">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            app:cardBackgroundColor="#e6e6e6"
             android:id="@+id/cardview1"
+            android:layout_below="@id/lineat1"
             android:layout_height="@dimen/dp_75">
             <TextView
                 android:layout_width="wrap_content"
@@ -88,12 +93,10 @@
                 android:layout_marginStart="310dp"
                 android:layout_marginTop="@dimen/dp_45"/>
         </androidx.cardview.widget.CardView>
-    </LinearLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="160dp"
-        app:cardBackgroundColor="#e6e6e6">
+        android:layout_marginTop="85dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,8 +115,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="240dp"
-        android:layout_marginTop="220dp"
-        app:cardBackgroundColor="#e6e6e6">
+        android:layout_marginTop="145dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -208,9 +210,8 @@
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        app:cardBackgroundColor="#e6e6e6"
-        android:layout_marginTop="470dp">
+        android:layout_height="440dp"
+        android:layout_marginTop="400dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -219,13 +220,19 @@
             android:textStyle="bold"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_marginStart="@dimen/dp_10"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:layout_marginStart="@dimen/dp_10"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="UPI"
             android:textStyle="bold"
             android:layout_marginTop="@dimen/dp_50"
-            android:layout_marginStart="@dimen/dp_30"/>
+            android:layout_marginStart="@dimen/dp_50"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -236,20 +243,94 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/dp_90"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="115dp"
+            android:layout_marginStart="@dimen/dp_10"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Paytm"
             android:textStyle="bold"
             android:layout_marginTop="120dp"
-            android:layout_marginStart="@dimen/dp_30"/>
+            android:layout_marginStart="@dimen/dp_50"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/paytm"
             android:layout_marginTop="115dp"
             android:layout_marginStart="350dp"/>
-    </androidx.cardview.widget.CardView>
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="160dp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="180dp"
+            android:layout_marginStart="@dimen/dp_10"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit/ Debit/ ATM card"
+            android:textStyle="bold"
+            android:layout_marginTop="185dp"
+            android:layout_marginStart="@dimen/dp_50"/>
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="230dp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_marginStart="@dimen/dp_10"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Net Banking"
+            android:textStyle="bold"
+            android:layout_marginTop="255dp"
+            android:layout_marginStart="@dimen/dp_50"/>
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="300dp"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:layout_marginStart="@dimen/dp_10"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EMI (Easy Installments)"
+            android:textStyle="bold"
+            android:layout_marginTop="325dp"
+            android:layout_marginStart="@dimen/dp_50"/>
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="370dp"/>
+        <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="390dp"
+        android:layout_marginStart="@dimen/dp_10"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cash on delivery"
+            android:textStyle="bold"
+            android:layout_marginTop="395dp"
+            android:layout_marginStart="@dimen/dp_50"/>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    </ScrollView>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="20dp"
