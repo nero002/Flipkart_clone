@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/home_fragment"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/fragment_first"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/home" />
+    </group>
+    <group
+        android:id="@+id/FlipkartPlusZone"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_FlipkartPlusZone"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/flipkart_plus_zone" />
+    </group>
+    <group
+        android:id="@+id/categories"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_AllCategories"
+            android:icon="@drawable/ic_all_categories__1_"
+            android:title="@string/all_categories" />
+
+        <item
+            android:id="@+id/nav_moreOnFlipkart"
+            android:icon="@drawable/ic_menu__1_"
+            android:title="@string/more_on_flipkart" />
+    </group>
+    <group
+        android:id="@+id/language"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_ChooseLanguage"
+            android:icon="@drawable/ic_iconfinder_translate_692155"
+            android:title="@string/choose_language" />
+
+    </group>
+    <group
+        android:id="@+id/offers"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_offerZone"
+            android:icon="@drawable/ic_discount"
+            android:title="@string/offer_zone" />
+
+        <item
+            android:id="@+id/sellOnFlipkart"
+            android:icon="@drawable/ic_bag"
+            android:title="@string/sell_on_flipkart" />
+    </group>
+    <group
+        android:id="@+id/orders"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/myOrders"
+            android:icon="@drawable/ic_myorder__1_"
+            android:title="@string/my_orders" />
+
+        <item
+            android:id="@+id/myCoupons"
+            android:icon="@drawable/ic_discount"
+            android:title="@string/my_coupons" />
+        <item
+            android:id="@+id/myCarts"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/my_carts" />
+        <item
+            android:id="@+id/myWishlist"
+            android:icon="@drawable/ic_iconmonstr_favorite_3"
+            android:title="@string/my_wishlist" />
+        <item
+            android:id="@+id/myAccount"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="@string/my_account" />
+        <item
+            android:id="@+id/myNotification"
+            android:icon="@drawable/ic_baseline_notifications_24"
+            android:title="@string/my_notification" />
+        <item
+            android:id="@+id/myChats"
+            android:icon="@drawable/ic_baseline_message_24"
+            android:title="@string/my_chats" />
+    </group>
+    <group
+        android:id="@+id/notifications"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/notificationsPreferences"
+            android:title="@string/notifications_preferences" />
+
+        <item
+            android:id="@+id/helpCentre"
+            android:title="@string/help_centre" />
+        <item
+            android:id="@+id/privacyPolicy"
+            android:title="@string/privacy_policy" />
+        <item
+            android:id="@+id/legal"
+            android:title="@string/legal" />
+    </group>
+
+
+</menu>
