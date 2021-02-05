@@ -107,6 +107,7 @@ public class MobileFragment extends Fragment {
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager( getContext());
                 mrrMobile.setLayoutManager(linearLayoutManager);
                 mrrMobile.setAdapter(restaurantAdapter);
+
             }
         });
 
