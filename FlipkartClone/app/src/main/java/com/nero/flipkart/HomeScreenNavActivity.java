@@ -51,7 +51,7 @@ public class HomeScreenNavActivity extends AppCompatActivity {
                     mDrawerLayout.openDrawer(GravityCompat.START);
 
                     HomeFragment homeFragment = new HomeFragment();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, homeFragment, "homefragment").commit();
+                    getSupportFragmentManager().beginTransaction().addToBackStack("").replace(R.id.nav_host_fragment, homeFragment, "homefragment").commit();
 
                 } else {
                     mDrawerLayout.closeDrawer(GravityCompat.START);

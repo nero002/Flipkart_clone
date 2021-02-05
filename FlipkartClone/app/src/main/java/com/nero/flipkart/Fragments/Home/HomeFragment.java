@@ -26,6 +26,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.slider.Slider;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.nero.flipkart.Fragments.FashionSales;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeAllCategoriesViewHolderAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeGridView4ViewHolderAndAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeHorizontalStatic3ViewHolder;
@@ -227,9 +228,16 @@ public class HomeFragment extends Fragment implements OnitemClickListener {
                     .addToBackStack(null)
                     .commit();
 
-        }if (position == 2){
+        }
+        if (position == 2) {
             MobileFragment mobileFragment = new MobileFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, mobileFragment, "offerZoneFragment")
+                    .addToBackStack(null)
+                    .commit();
+        }
+        if (position == 3) {
+            OfferZoneFragment offerZoneFragment = new OfferZoneFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, offerZoneFragment, "FashionZone")
                     .addToBackStack(null)
                     .commit();
         }

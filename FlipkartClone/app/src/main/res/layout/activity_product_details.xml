@@ -164,23 +164,23 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/btnAddToCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#f2f2f2"
             android:gravity="center"
-            android:text="ADD TO CART"
-            android:textStyle="bold" />
+            android:text="ADD TO CART" />
 
         <Button
+            android:id="@+id/btnBuyNow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/red"
+            android:background="@color/orange_login"
             android:gravity="center"
             android:text="BUY NOW"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
