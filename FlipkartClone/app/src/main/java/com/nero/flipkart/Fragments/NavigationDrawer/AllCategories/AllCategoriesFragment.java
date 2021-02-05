@@ -24,6 +24,5 @@ public class AllCategoriesFragment extends Fragment {
 
         return inflater.inflate(R.layout.fragment_all_categories, container, false);
 
-
     }
 }

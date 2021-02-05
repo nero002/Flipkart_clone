@@ -1,4 +1,9 @@
 package com.nero.flipkart.Adapters;
 
-public class MainAdapter {
+
+
+public class MainAdapter  {
+
+
+
 }
