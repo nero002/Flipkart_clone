@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivmobileimg"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <TextView
+            android:id="@+id/tvMobileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/ivmobileimg"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/tvRam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvMobileName"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ivmobileimg"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRam"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ivmobileimg"
+            android:background="#01B308"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRating"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/ivmobileimg"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvoffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvPrice"
+            android:layout_toRightOf="@+id/ivmobileimg"
+            android:layout_marginLeft="50dp"
+            android:textColor="#44F14B" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/ic_like_heart" />
+    </RelativeLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/dp_5"
+    android:layout_margin="@dimen/dp_5"
+    android:elevation="@dimen/dp_5">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_80"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/tvLanguageDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_80"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/radioButton"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvLanguageLocal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hindi_local"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_20"
+                />
+
+            <TextView
+                android:id="@+id/tvLanguageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hindi"
+                android:textStyle="bold"
+                android:textSize="@dimen/sp_16" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivPlace"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/charminar" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
