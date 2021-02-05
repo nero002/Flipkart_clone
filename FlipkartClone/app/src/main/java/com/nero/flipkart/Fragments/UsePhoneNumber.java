@@ -22,7 +22,8 @@ import com.nero.flipkart.R;
 public class UsePhoneNumber extends Fragment {
 
     private TextInputEditText tvPhone;
-    private Button btnUseEmail, btnContinue;
+    private Button  btnContinue;
+    private TextView btnUseEmail;
     private LoginIterface loginIterface;
 
     public UsePhoneNumber() {
@@ -55,14 +56,22 @@ public class UsePhoneNumber extends Fragment {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.d("madhuri", "onClick: "+ tvPhone.getEditText().getText().toString());
-
                 Log.d("madhuri", "onClick: "+ tvPhone.getText().toString());
-                Bundle bundle = new Bundle();
-                bundle.putString("phone", tvPhone.getText().toString());
-                loginIterface.continueWithPhone(bundle);
+                if (loginIterface != null && isPhoneValid()) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("phone", tvPhone.getText().toString());
+                    loginIterface.continueWithPhoneEmail(bundle);
+                }
             }
         });
+    }
+
+    private boolean isPhoneValid(){
+        if(tvPhone.getText().toString().length() != 10 && tvPhone.getText().toString().length() != 13){
+            tvPhone.setError("Invalid phone number");
+            return false;
+        }
+        return true;
     }
 
     public void setListener(LoginIterface listener){
