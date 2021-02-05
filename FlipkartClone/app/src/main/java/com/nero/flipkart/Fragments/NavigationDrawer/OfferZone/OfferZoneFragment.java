@@ -62,9 +62,9 @@ public class OfferZoneFragment extends Fragment {
         setViewPageAdapter();
     }
     private void setViewPageAdapter() {
-//        OfferZoneViewPagerAdapter viewPagerAdapter = new OfferZoneViewPagerAdapter(myContext.getFragmentManager(),FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-//        viewPager.setAdapter(viewPagerAdapter);
-//        tabLayout.setupWithViewPager(viewPager);
+        OfferZoneViewPagerAdapter viewPagerAdapter = new OfferZoneViewPagerAdapter(myContext.getSupportFragmentManager(),FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
 
