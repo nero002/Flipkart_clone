@@ -28,6 +28,7 @@ import com.nero.flipkart.Fragments.Home.RecyclerView.HomeAllCategoriesViewHolder
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeGridView4ViewHolderAndAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeHorizontalStatic3ViewHolder;
 import com.nero.flipkart.Fragments.MobileFragment.MobileViewHolderAdapter;
+import com.nero.flipkart.Model.ModelGridView;
 import com.nero.flipkart.POJO.MobileModel;
 import com.nero.flipkart.POJO.MobilesModel;
 import com.nero.flipkart.R;
@@ -43,6 +44,8 @@ public class HomeFragment extends Fragment {
     private ImageSlider imageSlider;
     private RecyclerView mRrAllCategories, rrHorizontalStaticView, mRrGrid4images;
     private Button btnContinue;
+    private ArrayList<ModelGridView> modelGridViewArrayList = new ArrayList<>();
+
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -86,31 +89,32 @@ public class HomeFragment extends Fragment {
     }
 
 
+
+    private void setRecyclerViewFor4GridView() {
+
+        modelGridViewArrayList.add(new ModelGridView(R.drawable.saree, "Saree", "Min 70% Off"));
+        modelGridViewArrayList.add(new ModelGridView(R.drawable.mug, "Mug", "Min 20% Off"));
+        modelGridViewArrayList.add(new ModelGridView(R.drawable.bear, "Teddy-Bear", "Min 10% Off"));
+        modelGridViewArrayList.add(new ModelGridView(R.drawable.watch, "Watches", "Min 50% Off"));
+
+        HomeGridView4ViewHolderAndAdapter adapter = new HomeGridView4ViewHolderAndAdapter(modelGridViewArrayList);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        mRrGrid4images.setLayoutManager(gridLayoutManager);
+        mRrGrid4images.setAdapter(adapter);
+    }
+
     private void setRecyclerViewFor3rdStaticHorizontal(MobileModel responseModel) {
         getActivity().runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(responseModel.getMobilesProducts().get(0).getMobiles());
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
                 rrHorizontalStaticView.setLayoutManager(linearLayoutManager);
                 rrHorizontalStaticView.setAdapter(homeHorizontalStatic3ViewHolder);
             }
         });
     }
-
-    private void setRecyclerViewFor4GridView() {
-        ArrayList<Integer> image = new ArrayList<>();
-//        image.add(R.drawable.saree);
-//        image.add(R.drawable.shoes);
-//        image.add(R.drawable.menshoodies);
-//        image.add(R.drawable.jwellery);
-//
-//        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-//        HomeHorizontalStatic3ViewHolder homeHorizontalStatic3ViewHolder = new HomeHorizontalStatic3ViewHolder(image);
-//        mRrGrid4images.setLayoutManager(gridLayoutManager);
-//        mRrGrid4images.setAdapter(homeHorizontalStatic3ViewHolder);
-    }
-
     private void setRecyclerViewForAllCategoriesOne() {
         //1st horizontal recyclerView
 
