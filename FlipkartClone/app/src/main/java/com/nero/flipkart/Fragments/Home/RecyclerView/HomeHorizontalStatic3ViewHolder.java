@@ -8,17 +8,21 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.nero.flipkart.POJO.MobileModel;
+import com.nero.flipkart.POJO.MobilesModel;
 import com.nero.flipkart.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeHorizontalStatic3ViewHolder extends RecyclerView.Adapter<HomeHorizontalStatic3ViewHolder.HomeHorizontalViewHolder> {
 
 
-    private ArrayList<Integer> imagelist;
+    private List<MobilesModel> mobilesModelList;
 
-    public HomeHorizontalStatic3ViewHolder(ArrayList<Integer> imagelist) {
-        this.imagelist = imagelist;
+    public HomeHorizontalStatic3ViewHolder(List<MobilesModel> mobilesModelList) {
+        this.mobilesModelList = mobilesModelList;
     }
 
     @NonNull
@@ -30,13 +34,13 @@ public class HomeHorizontalStatic3ViewHolder extends RecyclerView.Adapter<HomeHo
 
     @Override
     public void onBindViewHolder(@NonNull HomeHorizontalViewHolder holder, int position) {
-        int id = imagelist.get(position);
-        holder.setImage(id);
+        MobilesModel mobilesModel = mobilesModelList.get(position);
+        holder.setImage(mobilesModel);
     }
 
     @Override
     public int getItemCount() {
-        return imagelist.size();
+        return 3;
     }
 
     public class HomeHorizontalViewHolder extends RecyclerView.ViewHolder {
@@ -49,8 +53,10 @@ public class HomeHorizontalStatic3ViewHolder extends RecyclerView.Adapter<HomeHo
 
         }
 
-        public void setImage(int id) {
-            imageHorizontal1.setBackgroundResource(id);
+        public void setImage(MobilesModel mobilesModel) {
+            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage5Url()).into(imageHorizontal1);
+            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage5Url()).into(imageHorizontal1);
+            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage5Url()).into(imageHorizontal1);
 
         }
     }

@@ -4,20 +4,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nero.flipkart.Model.ModelGridView;
 import com.nero.flipkart.R;
 
 import java.util.ArrayList;
 
 public class HomeGridView4ViewHolderAndAdapter extends RecyclerView.Adapter<HomeGridView4ViewHolderAndAdapter.HomeGridView4ViewHolder> {
 
-    private ArrayList<Integer> imagelist;
+    private ArrayList<ModelGridView> modelGridViewArrayList;
 
-    public HomeGridView4ViewHolderAndAdapter(ArrayList<Integer> imagelist) {
-        this.imagelist = imagelist;
+
+    public HomeGridView4ViewHolderAndAdapter(ArrayList<ModelGridView> modelGridViewArrayList) {
+        this.modelGridViewArrayList = modelGridViewArrayList;
     }
 
     @NonNull
@@ -29,28 +32,39 @@ public class HomeGridView4ViewHolderAndAdapter extends RecyclerView.Adapter<Home
 
     @Override
     public void onBindViewHolder(@NonNull HomeGridView4ViewHolder holder, int position) {
-        int id = imagelist.get(position);
-        holder.setImage(id);
+        ModelGridView modelGridView = modelGridViewArrayList.get(position);
+        holder.setImage(modelGridView);
     }
 
     @Override
     public int getItemCount() {
-        return imagelist.size();
+        return modelGridViewArrayList.size();
     }
 
+    //
+    // ViewHolder
+    //
     public class HomeGridView4ViewHolder extends RecyclerView.ViewHolder {
         private ImageView grid1;
+        private TextView tvProductName, tvProductOffer;
 
         public HomeGridView4ViewHolder(@NonNull View itemView) {
             super(itemView);
             grid1 = itemView.findViewById(R.id.grid1);
+            tvProductName = itemView.findViewById(R.id.tvproductName);
+            tvProductOffer = itemView.findViewById(R.id.tv4Offer);
 
         }
 
-        public void setImage(int id) {
-            grid1.setBackgroundResource(id);
+        public void setImage(ModelGridView modelGridView) {
+            grid1.setBackgroundResource(modelGridView.getImageView());
+            tvProductOffer.setText(modelGridView.getTvProductOffer());
+            tvProductName.setText(modelGridView.getTvProductName());
 
 
         }
+
     }
 }
+
+
