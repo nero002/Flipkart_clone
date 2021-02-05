@@ -21,7 +21,8 @@ import com.nero.flipkart.R;
 public class UseEmailId extends Fragment {
 
     private TextInputEditText tvEmail;
-    private Button btnUsePhone, btnContinue;
+    private Button btnContinue;
+    private TextView btnUsePhone;
     private LoginIterface loginIterface;
 
     public UseEmailId() {
@@ -46,18 +47,30 @@ public class UseEmailId extends Fragment {
         btnUsePhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginIterface.onDataRecived();
+                if (loginIterface != null) {
+                    loginIterface.onDataRecived();
+                }
             }
         });
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("madhuri", "onClick: "+ tvEmail.getText().toString());
-                Bundle bundle = new Bundle();
-                bundle.putString("email", tvEmail.getText().toString());
-                loginIterface.continueWithEmail(bundle);
+                if (loginIterface != null && isEmailValid()) {
+                    Bundle bundle = new Bundle();
+                    bundle.putString("email", tvEmail.getText().toString());
+                    loginIterface.continueWithPhoneEmail(bundle);
+                }
             }
         });
+    }
+
+    private boolean isEmailValid(){
+        if(!tvEmail.getText().toString().contains("@gmail.com")){
+            tvEmail.setError("Invalid Email");
+            return false;
+        }
+        return true;
     }
 
     public void setListener(LoginIterface listener){
