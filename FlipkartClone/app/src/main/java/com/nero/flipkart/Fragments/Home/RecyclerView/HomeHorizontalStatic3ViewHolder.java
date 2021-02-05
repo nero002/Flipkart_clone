@@ -54,9 +54,9 @@ public class HomeHorizontalStatic3ViewHolder extends RecyclerView.Adapter<HomeHo
         }
 
         public void setImage(MobilesModel mobilesModel) {
-            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage1Url()).into(imageHorizontal1);
-            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage1Url()).into(imageHorizontal1);
-            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage1Url()).into(imageHorizontal1);
+            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage5Url()).into(imageHorizontal1);
+            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage5Url()).into(imageHorizontal1);
+            Glide.with(imageHorizontal1.getContext()).load(mobilesModel.getImage5Url()).into(imageHorizontal1);
 
         }
     }

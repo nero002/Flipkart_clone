@@ -17,7 +17,6 @@ import com.nero.flipkart.R;
 
 public class AllCategoriesFragment extends Fragment {
 
-    private AllCategoriesViewModel galleryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
