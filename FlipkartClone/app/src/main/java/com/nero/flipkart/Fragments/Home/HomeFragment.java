@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +29,12 @@ import com.google.gson.reflect.TypeToken;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeAllCategoriesViewHolderAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeGridView4ViewHolderAndAdapter;
 import com.nero.flipkart.Fragments.Home.RecyclerView.HomeHorizontalStatic3ViewHolder;
+import com.nero.flipkart.Fragments.MobileFragment.MobileFragment;
 import com.nero.flipkart.Fragments.MobileFragment.MobileViewHolderAdapter;
+import com.nero.flipkart.Fragments.NavigationDrawer.AllCategories.AllCategoriesFragment;
+import com.nero.flipkart.Fragments.NavigationDrawer.OfferZone.OfferZoneFragment;
+import com.nero.flipkart.HomeScreenNavActivity;
+import com.nero.flipkart.Interface.OnitemClickListener;
 import com.nero.flipkart.Model.ModelGridView;
 import com.nero.flipkart.POJO.MobileModel;
 import com.nero.flipkart.POJO.MobilesModel;
@@ -39,17 +46,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements OnitemClickListener {
 
     private ImageSlider imageSlider;
-    private RecyclerView mRrAllCategories, rrHorizontalStaticView, mRrGrid4images;
+    private RecyclerView mRrAllCategories, rrHorizontalStaticView, mRrGrid4images, mrrgridcard4;
     private Button btnContinue;
     private ArrayList<ModelGridView> modelGridViewArrayList = new ArrayList<>();
-
+    private OnitemClickListener listener;
+    private HomeScreenNavActivity homeScreenNavActivity;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        homeScreenNavActivity = (HomeScreenNavActivity) context;
     }
 
     public HomeFragment() {
@@ -82,12 +91,14 @@ public class HomeFragment extends Fragment {
         mRrAllCategories = view.findViewById(R.id.rrAllCategories);
         rrHorizontalStaticView = view.findViewById(R.id.rrHorizontalStaticView);
         mRrGrid4images = view.findViewById(R.id.grid4images);
+        mrrgridcard4 = view.findViewById(R.id.rrgridcard4);
+
         startBackgroundThread();
         setRecyclerViewForAllCategoriesOne();
         slider();
         setRecyclerViewFor4GridView();
+        SetRecyclerViewCard4();
     }
-
 
 
     private void setRecyclerViewFor4GridView() {
@@ -104,6 +115,22 @@ public class HomeFragment extends Fragment {
         mRrGrid4images.setAdapter(adapter);
     }
 
+    private void SetRecyclerViewCard4() {
+        ArrayList<ModelGridView> modelViewCard4 = new ArrayList<>();
+
+
+        modelViewCard4.add(new ModelGridView(R.drawable.jwellerysets, "", ""));
+        modelViewCard4.add(new ModelGridView(R.drawable.gaminglaptop, "", ""));
+        modelViewCard4.add(new ModelGridView(R.drawable.topsellingrange, "", ""));
+        modelViewCard4.add(new ModelGridView(R.drawable.walletslevis, "", ""));
+
+        HomeGridView4ViewHolderAndAdapter adapter = new HomeGridView4ViewHolderAndAdapter(modelViewCard4);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        mrrgridcard4.setLayoutManager(gridLayoutManager);
+        mrrgridcard4.setAdapter(adapter);
+    }
+
     private void setRecyclerViewFor3rdStaticHorizontal(MobileModel responseModel) {
         getActivity().runOnUiThread(new Runnable() {
             @Override
@@ -115,6 +142,7 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
     private void setRecyclerViewForAllCategoriesOne() {
         //1st horizontal recyclerView
 
@@ -132,9 +160,10 @@ public class HomeFragment extends Fragment {
         imageList.add(R.drawable.food);
         imageList.add(R.drawable.giftcard);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), RecyclerView.HORIZONTAL, false);
-        HomeAllCategoriesViewHolderAdapter homeAllCategoriesViewHolderAdapter = new HomeAllCategoriesViewHolderAdapter(imageList);
+        HomeAllCategoriesViewHolderAdapter homeAllCategoriesViewHolderAdapter = new HomeAllCategoriesViewHolderAdapter(imageList, this);
         mRrAllCategories.setLayoutManager(linearLayoutManager);
         mRrAllCategories.setAdapter(homeAllCategoriesViewHolderAdapter);
+
     }
 
     private void slider() {
@@ -182,4 +211,30 @@ public class HomeFragment extends Fragment {
         setRecyclerViewFor3rdStaticHorizontal(responseModel);
 
     }
+
+    @Override
+    public void onClick(int position) {
+        Log.d("Dheeraj", "click" + position);
+        if (position == 0) {
+            AllCategoriesFragment allCategoriesFragment = new AllCategoriesFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, allCategoriesFragment, "AllCategoriesFragment")
+                    .addToBackStack(null)
+                    .commit();
+        }
+        if (position == 1) {
+            OfferZoneFragment offerZoneFragment = new OfferZoneFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, offerZoneFragment, "offerZoneFragment")
+                    .addToBackStack(null)
+                    .commit();
+
+        }if (position == 2){
+            MobileFragment mobileFragment = new MobileFragment();
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, mobileFragment, "offerZoneFragment")
+                    .addToBackStack(null)
+                    .commit();
+        }
+
+    }
+
+
 }

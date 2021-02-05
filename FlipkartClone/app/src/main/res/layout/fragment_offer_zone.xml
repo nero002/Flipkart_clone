@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/dp_15"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Fragments.NavigationDrawer.OfferZone.OfferZoneFragment">
 
 
-
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:tabGravity="fill"
         app:tabMode="fixed"
-        app:tabTextColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        app:tabTextColor="@color/black" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/ViewPager"

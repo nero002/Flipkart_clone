@@ -29,10 +29,7 @@ public class HomeScreenNavActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
     RelativeLayout mRlNavBar;
     ImageView imageView;
-    //    public void relativeLayoutClick() {
-//
-//        Toast.makeText(this, "text", Toast.LENGTH_LONG).show();
-//    }
+
 
 
     @Override
@@ -65,7 +62,7 @@ public class HomeScreenNavActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.fragment_first,
-                R.id.nav_FlipkartPlusZone, R.id.nav_AllCategories, R.id.nav_moreOnFlipkart,R.id.nav_offerZone)
+                R.id.nav_FlipkartPlusZone, R.id.nav_AllCategories, R.id.nav_moreOnFlipkart, R.id.nav_offerZone)
                 .setDrawerLayout(mDrawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

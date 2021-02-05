@@ -114,13 +114,12 @@
                 android:src="@drawable/phonebanner" />
         </androidx.cardview.widget.CardView>
 
-        <GridView
-            android:id="@+id/gridViewCards"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rrgridcard4"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:columnWidth="@dimen/dp_200"
-            android:numColumns="2"
-            android:verticalSpacing="@dimen/dp_6" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_10" />
     </LinearLayout>
 
 

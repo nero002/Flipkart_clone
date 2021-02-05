@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_25"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context=".Fragments.MobileFragment.MobileFragment">
-
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rrMobile"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent" />
 
     <ProgressBar
         android:id="@+id/progressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
+
 </FrameLayout>
