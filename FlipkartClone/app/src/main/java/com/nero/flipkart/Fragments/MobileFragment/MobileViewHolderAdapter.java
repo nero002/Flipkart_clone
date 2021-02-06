@@ -2,14 +2,17 @@ package com.nero.flipkart.Fragments.MobileFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.nero.flipkart.Interface.OnitemClickListener;
 import com.nero.flipkart.POJO.MobilesModel;
 import com.nero.flipkart.R;
 
@@ -46,10 +49,12 @@ public class MobileViewHolderAdapter extends RecyclerView.Adapter<MobileViewHold
 
         private TextView mtvPrice, mTvTitle, mtvRating, mtvRam, mtvoffer;
         private ImageView mtvImage;
+        private RelativeLayout mrrMobile;
 
-        public MobileHolder(@NonNull View itemView) {
+        public MobileHolder(@NonNull View itemView ) {
             super(itemView);
             initViews(itemView);
+
         }
 
         private void initViews(View itemView) {
@@ -59,9 +64,7 @@ public class MobileViewHolderAdapter extends RecyclerView.Adapter<MobileViewHold
             mtvRam = itemView.findViewById(R.id.tvRam);
             mtvoffer = itemView.findViewById(R.id.tvoffer);
             mtvPrice = itemView.findViewById(R.id.tvPrice);
-//
-//            mtvExtra = itemView.findViewById(R.id.tvExtra);
-
+            mrrMobile = itemView.findViewById(R.id.rlMobile);
         }
 
         public void setData(MobilesModel mobileModel) {
@@ -73,6 +76,8 @@ public class MobileViewHolderAdapter extends RecyclerView.Adapter<MobileViewHold
             mtvPrice.setText(mobileModel.getPrice());
             mtvoffer.setText(mobileModel.getOffer());
             mtvRating.setText(mobileModel.getRating());
+
+
 
         }
     }

@@ -93,6 +93,16 @@ public class HomeFragment extends Fragment implements OnitemClickListener {
         rrHorizontalStaticView = view.findViewById(R.id.rrHorizontalStaticView);
         mRrGrid4images = view.findViewById(R.id.grid4images);
         mrrgridcard4 = view.findViewById(R.id.rrgridcard4);
+        btnContinue = view.findViewById(R.id.btnViewAll);
+        btnContinue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MobileFragment mobileFragment = new MobileFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, mobileFragment, "offerZoneFragment")
+                        .addToBackStack("null")
+                        .commit();
+            }
+        });
 
         startBackgroundThread();
         setRecyclerViewForAllCategoriesOne();

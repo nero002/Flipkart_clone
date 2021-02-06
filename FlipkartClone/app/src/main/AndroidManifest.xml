@@ -6,24 +6,26 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_flipkart_logo_round"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_flipkart_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Flipkart">
         <activity android:name=".BuyNow"></activity>
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ProductDetails" />
+        <activity android:name=".OfferZone" />
+        <activity android:name=".SelectLanguage" />
+        <activity android:name=".HomeScreenNavActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".ProductDetails" />
-        <activity android:name=".OfferZone" />
-        <activity android:name=".SelectLanguage" />
-        <activity android:name=".HomeScreenNavActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

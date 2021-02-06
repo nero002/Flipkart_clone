@@ -1,5 +1,6 @@
 package com.nero.flipkart.Fragments.MobileFragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,8 @@ import android.widget.ProgressBar;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.nero.flipkart.HomeScreenNavActivity;
+import com.nero.flipkart.Interface.OnitemClickListener;
 import com.nero.flipkart.POJO.MobileModel;
 import com.nero.flipkart.R;
 
@@ -26,8 +29,10 @@ import java.lang.reflect.Type;
 public class MobileFragment extends Fragment {
 
 
-    private  RecyclerView mrrMobile;
+    private RecyclerView mrrMobile;
     private ProgressBar mpbProgressBar;
+    private HomeScreenNavActivity homeScreenNavActivity;
+
     private Runnable fetchResponseRunnable = new Runnable() {
         @Override
         public void run() {
@@ -44,6 +49,12 @@ public class MobileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        homeScreenNavActivity = (HomeScreenNavActivity) context;
     }
 
     @Override
@@ -70,6 +81,7 @@ public class MobileFragment extends Fragment {
     private void startBackgroundThread() {
         Thread thread = new Thread(fetchResponseRunnable);
         thread.start();
+
     }
 
     private void fetchResponseFromAssets() {
@@ -104,7 +116,7 @@ public class MobileFragment extends Fragment {
             public void run() {
                 mpbProgressBar.setVisibility(View.GONE);
                 MobileViewHolderAdapter restaurantAdapter = new MobileViewHolderAdapter(responseModel.getMobilesProducts().get(0).getMobiles());
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager( getContext());
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
                 mrrMobile.setLayoutManager(linearLayoutManager);
                 mrrMobile.setAdapter(restaurantAdapter);
 
@@ -112,4 +124,7 @@ public class MobileFragment extends Fragment {
         });
 
     }
+
+
+
 }

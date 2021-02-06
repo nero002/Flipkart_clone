@@ -68,6 +68,7 @@ public class ProductDetails extends AppCompatActivity {
         });
     }
 
+
     private void getDataFromAPI() {
         String userid = "0";
         Log.d("madhuripatel", "getDataFromAPI: " + userid);
