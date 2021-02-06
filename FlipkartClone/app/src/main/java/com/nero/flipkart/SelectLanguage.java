@@ -47,6 +47,7 @@ public class SelectLanguage extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View v) {
                 Intent intent = new Intent(SelectLanguage.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

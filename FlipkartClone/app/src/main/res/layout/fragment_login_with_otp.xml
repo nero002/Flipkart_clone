@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_margin="@dimen/dp_20"
+    android:orientation="vertical"
     tools:context=".Fragments.LoginWithOTP">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/enterOTP"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"/>
+            android:textSize="@dimen/sp_20" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,103 +30,115 @@
 
             <TextView
                 android:id="@+id/tvSignup"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/sp_16"/>
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_16" />
 
             <TextView
                 android:id="@+id/tvEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit"
                 android:layout_marginLeft="@dimen/dp_5"
+                android:text="Edit"
                 android:textColor="@color/blue"
-                android:textStyle="bold"
-                android:textSize="@dimen/sp_12"/>
+                android:textSize="@dimen/sp_12"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_15"
             android:orientation="horizontal">
+
             <EditText
+                android:id="@+id/mEtFistDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/dp_2"
-                android:maxLength="1"
-                android:inputType="number"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/sp_25"
-                android:hint="1"/>
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/sp_25" />
+
             <EditText
+                android:id="@+id/mEtSecondDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/dp_2"
-                android:maxLength="1"
-                android:inputType="number"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/sp_25"
-                android:hint="1"/>
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/sp_25" />
+
             <EditText
+                android:id="@+id/mEtThirdDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/dp_2"
-                android:maxLength="1"
-                android:inputType="number"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/sp_25"
-                android:hint="1"/>
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/sp_25" />
+
             <EditText
+                android:id="@+id/mEtFourthDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/dp_2"
-                android:maxLength="1"
-                android:inputType="number"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/sp_25"
-                android:hint="1"/>
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/sp_25" />
+
             <EditText
+                android:id="@+id/mEtFifthDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/dp_2"
-                android:maxLength="1"
-                android:inputType="number"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/sp_25"
-                android:hint="1"/>
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/sp_25" />
+
             <EditText
+                android:id="@+id/mEtSixthDigit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_margin="@dimen/dp_2"
-                android:maxLength="1"
-                android:inputType="number"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textSize="@dimen/sp_25"
-                android:hint="1"/>
+                android:hint="x"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textSize="@dimen/sp_25" />
 
         </LinearLayout>
     </LinearLayout>
+
     <Button
         android:id="@+id/btnContinueWithOtp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
-        android:padding="@dimen/dp_20"
-        android:background="@color/yellow_bumble"
-        android:textColor="@color/blue"
+        android:background="#BFB8B3"
+        android:padding="@dimen/dp_15"
         android:text="@string/verify"
+        android:textAllCaps="false"
         android:textSize="@dimen/sp_20"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

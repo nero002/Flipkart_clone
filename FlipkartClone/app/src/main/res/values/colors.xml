@@ -22,5 +22,6 @@
     <color name="pink_red">#FF0088</color>
     <color name="Flipkart_Blue">#2874F0</color>
     <color name="Flipkart_Blue_dark">#1c2067</color>
+    <color name="orange_login">#FE7E29</color>
 
 </resources>
